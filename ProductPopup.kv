@@ -1,0 +1,88 @@
+<ProductPopup@ModalView>:
+
+    size_hint: .8, .8
+    background: 'white.png'
+
+
+
+    BoxLayout:
+
+
+        orientation: "vertical"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y:15
+
+            AsyncImage:
+                size_hint_x: 20
+                source: 'image/boseBlack.png'
+            BoxLayout:
+                size_hint_x: 80
+
+        BoxLayout:
+            id: contentbox
+            orientation: "horizontal"
+            size_hint_y:80
+
+            BoxLayout:
+                size_hint_x:100
+                padding: 50,50,50,50
+                AsyncImage:
+                    source: 'image/samsungSoundBar.jpg'
+            BoxLayout:
+                size_hint_x:100
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y:60
+
+                    BoxLayout:
+                        size_hint_y:50
+
+                    BoxLayout:
+                        size_hint_y:20
+                        Label:
+                            text:"SOUNDTOUCH 300 SOUNDBAR"
+                            font_size:'21sp'
+                            color: [0,0,0,1]
+                            bold: True
+
+                BoxLayout:
+                    size_hint_y:80
+                    padding:50,5,50,50
+                    orientation: 'vertical'
+
+                    BoxLayout:
+
+                        size_hint_y:50
+                        Label:
+                            id: content_text
+                            height: self.texture_size[1]
+                            color: [0,0,0,1]
+                            text: "Many people view soundbars as a common solution to space-saving home theater. But we don’t aim for common The SoundTouch 300 soundbar offers the best performance, spaciousness and bass of any one-piece soundbar its size. Every cubic inch of it is packed with technologies that bring out the best in everything you listen to or watch."
+                            text_size: (self.width-70), None
+                            font_size:'10sp'
+                            valign: "top"
+                            halign: 'center'
+                            font_name: "PTSansThin"
+                    BoxLayout
+                        size_hint_y:40
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y:15
+            padding:[20,20,20,20]
+            BoxLayout:
+                size_hint_x:30
+            Button:
+                size_hint_x:30
+                text: "Close"
+                bold: True
+                on_press: root.dismiss()
+                background_color: 0, 0, 0, 1
+            BoxLayout:
+                size_hint_x:30

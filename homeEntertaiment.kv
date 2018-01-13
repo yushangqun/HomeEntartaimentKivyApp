@@ -1,0 +1,194 @@
+#:import Factory kivy.factory.Factory
+#:include TrailerPopup.kv
+#:include ProductPopup.kv
+<CustomFloatLayout>:
+    canvas.before:
+        Color:
+            rgba: 0.95, 0.95, 0.95, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    #use the gridlayout as a container for videoplayer, it allows videoPlayer to turn into full screen without any weired behaviour.
+    
+    ScrollView:
+        id:frontScrollView
+        size_hint: 1, .7
+        pos_hint:{'x':0, 'y' :.2}
+        BoxLayout:
+            size_hint: 1, 2
+
+            orientation: 'vertical'
+            FloatLayout:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'image/wallPaper.png'
+                BoxLayout:
+                    orientation: 'vertical'
+                    canvas.before:
+                        Color:
+                            rgba: 0.95, 0.95, 0.95, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    size_hint:.4, .4
+                    
+                    pos_hint:{'x':.1, 'y':.1}
+                    BoxLayout:
+                        size_hint_y:400
+                        Label:
+                            text: 'UNCOMPROMISING HOME ENTERTAIMENT'
+                            text_size: self.width/2, self.height
+                            font_size: '18sp'
+                            halign: 'center'
+                            valign: 'bottom'
+                            color: 0, 0, 0, 1
+                            bold: True
+                    BoxLayout:
+                        size_hint_y:200
+                        Label:
+                            text: 'LIFESTYLE 650 HOME ENTERTAINMENT SYSTEM'
+                            text_size: self.width/2, self.height
+                            font_size: '12sp'
+                            halign: 'center'
+                            valign: 'middle'
+                            color: 0, 0, 0, 1
+                            
+                    BoxLayout:
+                        size_hint_y:400
+                        AnchorLayout:
+                            anchor_x: 'center'
+                            anchor_y: 'center'
+                            Button:
+                                background_color: 0, 0, 0, 1
+                                size_hint: None, None
+                                text: "Experience"
+                                size: 200, 50
+                                bold: True
+                                on_press: root.scrollDown()
+
+
+
+
+            VideoPlayer:
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                id: myVideoPlayer
+                source: '/users/shangqunyu/Downloads/interstellar.mov'
+    GridLayout:
+        cols: 4
+        rows: 1
+        spacing: [20,20]
+        padding: [20,20,20,20]
+        size_hint: 1, .2
+        pos_hint: {'x':0, 'y':0}
+        
+
+        ProductThumbNailWidget
+            #on_press: Factory.ProductPopup().open()
+        Button
+            text: "To be Announce"
+            background_color: 1,1,1,1
+            on_press: root.callback()
+        Button
+            text: "To be Announce"
+            background_color: 1,1,1,1
+        Button
+            text: "To be Announce"
+            background_color: 1,1,1,1
+    #heading
+    GridLayout:
+        cols: 1
+        rows: 1
+        size_hint: 1, .1
+        pos_hint: {'x': 0, 'y':.9}
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            cols: 1
+            rows: 1
+            AsyncImage:
+                source: 'image/bose.png'
+
+    #trailer dropdown
+    GridLayout:
+        cols: 1
+        rows: 1
+        padding:[20,20,20,20]
+        size_hint: .1, .1
+        pos_hint:{'x': 0.9, 'y': 0.9}
+        AsyncImage:
+            source: 'image/trailerIcon.png'
+            
+    BoxLayout:
+        size_hint: .1, None
+        pos_hint: {'x': 0.9, 'y': 0.9}
+        Button:
+            id: btn
+            text: ''
+            background_color: [0,0,0,1]
+            on_release: root.callback2()
+            size_hint_y: None
+            height: '48dp'
+            bold: True
+            background_color: [0,0,0,0]
+        
+
+
+
+
+
+<ProductThumbNailWidget>:
+    FloatLayout:
+        pos: root.x, root.y
+        size: root.width, root.height
+        padding:[0,0,0,0]
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            pos: root.x, root.y
+            size_hint:None, None
+            size:  root.width * 0.5, root.height
+            AsyncImage:
+                source: 'image/samsungSoundBar.png'
+        FloatLayout:
+            pos: root.x+root.width * 0.5, root.y
+            size_hint:None, None
+            size:  root.width * 0.5, root.height
+
+            Label:
+                text: 'SoundTouch 30 wireless speaker'
+                halign: 'center'
+                valign: 'middle'
+                size_hint: .8, None
+                color: [0,0,0,1]
+                bold: True
+                font_size: '10sp'
+                text_size: self.width, self.height
+                pos: root.x + root.width/4 *3-self.width/2, root.y+root.height/2-self.height/2
+            AsyncImage:
+                source: 'image/infoIcon.png'
+                size_hint: .2, .2
+                pos: root.x+root.width-self.width, root.y+root.height-self.height
+                size: 50, 50
+            
+            
+
+
+
+
