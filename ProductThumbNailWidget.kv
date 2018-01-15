@@ -1,0 +1,38 @@
+<ProductThumbNailWidget>:
+    FloatLayout:
+        pos: root.x, root.y
+        size: root.width, root.height
+        padding:[0,0,0,0]
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            pos: root.x, root.y
+            size_hint:None, None
+            size:  root.width * 0.5, root.height
+            AsyncImage:
+                source: 'image/samsungSoundBar.png'
+        FloatLayout:
+            pos: root.x+root.width * 0.5, root.y
+            size_hint:None, None
+            size:  root.width * 0.5, root.height
+
+            Label:
+                text: 'SoundTouch 30 wireless speaker'
+                halign: 'center'
+                valign: 'middle'
+                size_hint: .8, None
+                color: [0,0,0,1]
+                bold: True
+                font_size: '10sp'
+                text_size: self.width, self.height
+                pos: root.x + root.width/4 *3-self.width/2, root.y+root.height/2-self.height/2
+            AsyncImage:
+                source: 'image/infoIcon.png'
+                size_hint: .2, .2
+                pos: root.x+root.width-self.width, root.y+root.height-self.height
+                size: 50, 50

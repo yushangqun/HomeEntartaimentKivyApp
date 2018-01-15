@@ -36,7 +36,7 @@ class CustomFloatLayout(FloatLayout):
         self.ids["frontScrollView"].scroll_to( self.ids["myVideoPlayer"])
 
 
-
+#function for ThumbNailWidget. 
 class ProductThumbNailWidget(Widget):
     def on_touch_down(self, touch):
         if self.collide_point(*touch.pos):
