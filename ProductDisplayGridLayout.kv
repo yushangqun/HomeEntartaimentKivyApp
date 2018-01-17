@@ -1,0 +1,14 @@
+<ProductDisplayGridLayout>:
+    id: product_Display
+    size_hint: .5, 1
+    rows: 1
+    spacing: [20,20]
+    padding: [20,20,20,20]
+
+    canvas.before:
+        Color:
+            rgba: 0.95, 0.95, 0.95, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+

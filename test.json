@@ -1,0 +1,5 @@
+{"product0": {"productImageSource": "image/samsungSoundBar.png", "name": "soundBar Beast", "productDetail": "this is a very unique soundBar, like a beast"},
+  "product1": {"productImageSource": "image/boseSoundBar.png", "name": "soundBar Devil", "productDetail": "this is a very unique soundBar, coming from the hell"},
+  "product2": {"productImageSource": "image/samsungSoundBar.png", "name": "soundBar Monster", "productDetail": "this is a very unique soundBar, it is literally a monster"},
+"product3": {"productImageSource": "image/samsungSoundBar.png", "name": "soundBar Giant", "productDetail": "this is a very unique soundBar, giant is entry level version of giant"},
+"product4": {"productImageSource": "image/samsungSoundBar.png", "name": "soundBar Titan", "productDetail": "this is a very unique soundBar, titan is the premiumn version of titan"}}

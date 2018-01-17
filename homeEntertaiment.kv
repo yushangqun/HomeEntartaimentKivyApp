@@ -2,7 +2,10 @@
 #:include TrailerPopup.kv
 #:include ProductPopup.kv
 #:include ProductThumbNailWidget.kv
-<CustomFloatLayout>:
+#:include ProductDisplayGridLayout.kv
+<MainView>:
+    product_Display: product_Display
+    frontScrollView: frontScrollView
     canvas.before:
         Color:
             rgba: 0.95, 0.95, 0.95, 1
@@ -80,27 +83,17 @@
                         size: self.size
                 id: myVideoPlayer
                 source: '/users/shangqunyu/Downloads/interstellar.mov'
-    GridLayout:
-        cols: 4
-        rows: 1
-        spacing: [20,20]
-        padding: [20,20,20,20]
+
+    ScrollView:
         size_hint: 1, .2
         pos_hint: {'x':0, 'y':0}
+
+        ProductDisplayGridLayout:
+            id: product_Display
+
         
 
-        ProductThumbNailWidget
-            #on_press: Factory.ProductPopup().open()
-        Button
-            text: "To be Announce"
-            background_color: 1,1,1,1
-            on_press: root.callback()
-        Button
-            text: "To be Announce"
-            background_color: 1,1,1,1
-        Button
-            text: "To be Announce"
-            background_color: 1,1,1,1
+
     #heading
     GridLayout:
         cols: 1

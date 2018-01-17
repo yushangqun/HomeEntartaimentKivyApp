@@ -1,10 +1,9 @@
-<ProductPopup@ModalView>:
-
+<ProductPopup>:
+    productDetailText: productDetailText
+    productImage: productImage
+    productName: productName
     size_hint: .8, .8
     background: 'white.png'
-
-
-
     BoxLayout:
         orientation: "vertical"
 
@@ -13,6 +12,7 @@
             size_hint_y:15
 
             AsyncImage:
+
                 size_hint_x: 20
                 source: 'image/boseBlack.png'
             BoxLayout:
@@ -27,7 +27,8 @@
                 size_hint_x:100
                 padding: 50,50,50,50
                 AsyncImage:
-                    source: 'image/samsungSoundBar.jpg'
+                    id: productImage
+
             BoxLayout:
                 size_hint_x:100
                 orientation: "vertical"
@@ -41,7 +42,7 @@
                     BoxLayout:
                         size_hint_y:20
                         Label:
-                            text:"SOUNDTOUCH 300 SOUNDBAR"
+                            id: productName
                             font_size:'21sp'
                             color: [0,0,0,1]
                             bold: True
@@ -52,13 +53,12 @@
                     orientation: 'vertical'
 
                     BoxLayout:
-
                         size_hint_y:50
                         Label:
-                            id: content_text
+                            id: productDetailText
                             height: self.texture_size[1]
                             color: [0,0,0,1]
-                            text: "Many people view soundbars as a common solution to space-saving home theater. But we don’t aim for common The SoundTouch 300 soundbar offers the best performance, spaciousness and bass of any one-piece soundbar its size. Every cubic inch of it is packed with technologies that bring out the best in everything you listen to or watch."
+                            text: ""
                             text_size: (self.width-70), None
                             font_size:'10sp'
                             valign: "top"
